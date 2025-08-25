@@ -1,0 +1,299 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Shortcut Hints Settings</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      margin: 0;
+      padding: 32px;
+      color: #e0e0e0;
+      background: #1a1a1a;
+      box-sizing: border-box;
+      max-width: none;
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+    .settings-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin: 0 0 32px;
+      color: #ffffff;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .section {
+      margin-bottom: 40px;
+      background: #2a2a2a;
+      border-radius: 8px;
+      padding: 24px;
+      border: 1px solid #3a3a3a;
+    }
+
+    h2.section-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0 0 16px;
+      color: #ffffff;
+    }
+
+    .section-description {
+      color: #b0b0b0;
+      margin: 0 0 24px;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .setting-item {
+      margin-bottom: 16px;
+    }
+
+    /* Table Styles */
+    .shortcuts-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      background: #252525;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid #404040;
+    }
+
+    .shortcuts-table th,
+    .shortcuts-table td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid #404040;
+    }
+
+    .shortcuts-table th {
+      background: #333333;
+      font-weight: 600;
+      color: #ffffff;
+      font-size: 14px;
+    }
+
+    .shortcuts-table td {
+      color: #e0e0e0;
+      font-size: 14px;
+    }
+
+    .shortcuts-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .shortcuts-table tr:hover {
+      background: #2d2d2d;
+    }
+
+    .shortcut-key {
+      background: #4a90e2;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-family: ui-monospace, SFMono-Regular, monospace;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .site-section {
+      margin-bottom: 24px;
+    }
+
+    .site-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #ffffff;
+      margin: 0 0 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #404040;
+    }
+
+    .json-editor {
+      width: 100%;
+      max-width: 100%;
+      min-height: 280px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 13px;
+      background: #1e1e1e;
+      color: #d4d4d4;
+      border: 1px solid #404040;
+      border-radius: 6px;
+      padding: 16px;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      overflow-x: auto;
+      overflow-y: auto;
+      position: relative;
+      tab-size: 2;
+      box-sizing: border-box;
+    }
+
+    .json-editor:focus {
+      outline: none;
+      border-color: #4a90e2;
+    }
+
+    /* JSON Syntax Highlighting Classes */
+    .json-key {
+      color: #9cdcfe;
+    }
+
+    .json-string {
+      color: #ce9178;
+    }
+
+    .json-number {
+      color: #b5cea8;
+    }
+
+    .json-boolean {
+      color: #569cd6;
+    }
+
+    .json-null {
+      color: #569cd6;
+    }
+
+    .json-bracket {
+      color: #ffd700;
+    }
+
+    .json-comma {
+      color: #d4d4d4;
+    }
+
+    .json-colon {
+      color: #d4d4d4;
+    }
+
+    /* JSON Editor Container */
+    .json-editor-container {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      min-height: 240px;
+      box-sizing: border-box;
+    }
+
+    .json-editor-container.invalid .json-editor {
+      border-color: #d49090;
+    }
+
+    /* Editable textarea overlay */
+    .json-textarea {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+      background: transparent;
+      border: none;
+      color: transparent;
+      caret-color: #d4d4d4;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 13px;
+      line-height: 1.5;
+      padding: 16px;
+      resize: none;
+      overflow-x: auto;
+      overflow-y: auto;
+      outline: none;
+      z-index: 2;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      tab-size: 2;
+      box-sizing: border-box;
+    }
+
+    .json-textarea:focus {
+      outline: none;
+    }
+
+    .actions {
+      display: flex;
+      gap: 16px;
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid #404040;
+    }
+
+    .sites-container {
+      margin-top: 16px;
+    }
+
+    button {
+      padding: 10px 16px;
+      border-radius: 6px;
+      border: 1px solid #404040;
+      background: #3d3d3d;
+      color: #e0e0e0;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      font-size: 14px;
+    }
+
+    button:hover {
+      background: #4d4d4d;
+    }
+
+    button.primary {
+      background: #4a90e2;
+      color: #fff;
+      border-color: #4a90e2;
+    }
+
+    button.primary:hover {
+      background: #6ba3e5;
+    }
+
+    .status {
+      margin-top: 16px;
+      padding: 8px 12px;
+      background: #2a4d2a;
+      color: #90d490;
+      border-radius: 4px;
+      font-size: 14px;
+      text-align: center;
+      display: none;
+    }
+
+    .error {
+      color: #d49090;
+    }
+
+    .hint {
+      color: #a0a0a0;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Shortcut Hints Settings</h1>
+
+  <div class="settings-container">
+    <div class="section">
+      <h2 class="section-title">Available Shortcuts</h2>
+      <p class="section-description">Choose which keyboard shortcuts you'd like to see hints for on each website.</p>
+      <div id="sites" class="sites-container"></div>
+      <div id="status" class="status"></div>
+    </div>
+  </div>
+
+  <!-- Load site modules so the options page can list available hints -->
+  <script src="../content/sites/whatsapp.js"></script>
+  <script src="options.js"></script>
+</body>
+
+</html>

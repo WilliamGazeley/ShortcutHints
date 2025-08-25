@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Shortcut Hints</title>
+  <style>
+    body {
+      width: 320px;
+      min-height: 160px;
+      margin: 0;
+      padding: 12px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #1a1a1a;
+      color: #e0e0e0;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 18px;
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+
+
+    .button {
+      display: block;
+      width: 100%;
+      padding: 8px 12px;
+      margin: 4px 0;
+      background: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      transition: background-color 0.2s;
+      box-sizing: border-box;
+    }
+
+    .button:hover {
+      background: #6ba3e5;
+    }
+
+
+
+    .info {
+      font-size: 11px;
+      color: #a0a0a0;
+      text-align: center;
+      margin-top: 8px;
+      line-height: 1.3;
+      padding: 0 4px;
+    }
+
+    .hints-section {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid #404040;
+    }
+
+    .site-name {
+      font-size: 14px;
+      color: #ffffff;
+      font-weight: 600;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .hint-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 8px 0;
+      padding: 8px 10px;
+      background: #2d2d2d;
+      border-radius: 6px;
+      border: 1px solid #404040;
+    }
+
+    .hint-info {
+      flex-grow: 1;
+    }
+
+    .hint-label {
+      font-size: 13px;
+      color: #e0e0e0;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    .hint-shortcut {
+      font-size: 11px;
+      color: #a0a0a0;
+      font-family: monospace;
+      background: #333;
+      padding: 2px 6px;
+      border-radius: 3px;
+      display: inline-block;
+    }
+
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+      margin-left: 12px;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #555;
+      transition: .3s;
+      border-radius: 20px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 2px;
+      bottom: 2px;
+      background-color: #e0e0e0;
+      transition: .3s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #4a90e2;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+
+    .no-hints {
+      text-align: center;
+      color: #a0a0a0;
+      font-size: 12px;
+      padding: 16px;
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <h1>Shortcut Hints</h1>
+  </div>
+
+  <div id="hints-section" class="hints-section" style="display: none;">
+    <div id="site-name" class="site-name"></div>
+    <div id="hints-container"></div>
+    <div id="no-hints" class="no-hints" style="display: none;">
+      No keyboard shortcuts available for this website.
+    </div>
+  </div>
+
+  <a href="#" id="openOptions" class="button">Open Settings</a>
+
+  <div class="info">
+    Toggle shortcuts on/off for this page, or click "Open Settings" for global preferences.
+  </div>
+
+  <!-- Load site modules so the popup can access available hints -->
+  <script src="../content/sites/whatsapp.js"></script>
+  <script src="popup.js"></script>
+</body>
+
+</html>
