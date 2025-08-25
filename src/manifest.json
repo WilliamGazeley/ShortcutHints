@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Shortcut Hints",
   "version": "0.1.0",
-  "description": "Augments input placeholders and UI controls with keyboard shortcuts via auto-detection and per-site config.",
+  "description": "Displays keyboard shortcuts for popular websites.",
   "permissions": [
     "storage",
     "tabs"
@@ -27,6 +27,7 @@
       "js": [
         "content/hintRenderer.js",
         "content/sites/whatsapp.js",
+        "content/sites/youtube.js",
         "content/contentScript.js"
       ],
       "run_at": "document_end"

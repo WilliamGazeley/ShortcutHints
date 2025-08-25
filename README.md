@@ -1,12 +1,14 @@
 # Shortcut Hints
 
-Always‑visible keyboard shortcut hints for popular websites. Hints are added manually per‑site for high reliability and polish, and can be toggled on/off from the settings page. Chrome and Firefox are supported.
+Love keyboard shortcuts but hate memorizing them? Shortcut Hints puts keyboard shortcut hints right on your favorite sites so you can ditch the mouse and zip around with ease. Works on Chrome and Firefox!
 
 ## Current support
 
 - WhatsApp Web (`web.whatsapp.com`)
-  - Search conversations: `Ctrl + Alt + /` (sidebar label hint)
-  - Search in current chat: `Ctrl + Shift + F` (header button hint)
+  - Search conversations: `Ctrl + Alt + /`
+  - Search in current chat: `Ctrl + Shift + F`
+- YouTube (`youtube.com`)
+  - Search bar: `/`
 
 More sites are welcome via contributions (see Contributing).
 
