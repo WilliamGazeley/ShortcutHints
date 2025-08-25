@@ -1,14 +1,15 @@
 {
   "manifest_version": 3,
   "name": "Shortcut Hints",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Displays keyboard shortcuts for popular websites.",
   "permissions": [
     "storage",
     "tabs"
   ],
   "host_permissions": [
-    "<all_urls>"
+    "*://www.youtube.com/*",
+    "*://web.whatsapp.com/*"
   ],
   "background": {
     "scripts": [
@@ -22,7 +23,8 @@
   "content_scripts": [
     {
       "matches": [
-        "<all_urls>"
+        "*://www.youtube.com/*",
+        "*://web.whatsapp.com/*"
       ],
       "js": [
         "content/hintRenderer.js",
