@@ -17,6 +17,11 @@ Love keyboard shortcuts but hate memorizing them? Shortcut Hints puts keyboard s
 
 More sites are welcome via contributions (see Contributing).
 
+## Install
+
+Firefox: https://addons.mozilla.org/en-US/firefox/addon/shortcut-hints/
+
+
 ## Install (development)
 
 1. Clone
