@@ -2,6 +2,11 @@
 
 **Effective Date:** December 2024
 
+## Data Storage & Security
+- **100% local storage:** Everything stays on your device
+- **Browser security:** Protected by Chrome/Firefox built-in encryption
+- **No external servers:** No data ever leaves your computer
+
 ## What We Collect
 - **User preferences only:** Which keyboard shortcuts you want to see on different websites
 - **Current website:** Temporary detection of which site you're visiting (never stored)
@@ -10,11 +15,6 @@
 - **Remember your choices:** Save which hints you've enabled/disabled
 - **Show relevant shortcuts:** Display appropriate hints based on current website
 - **Real-time updates:** Apply changes instantly without page refresh
-
-## Data Storage & Security
-- **100% local storage:** Everything stays on your device
-- **Browser security:** Protected by Chrome/Firefox built-in encryption
-- **No external servers:** No data ever leaves your computer
 
 ## Permissions Explained
 - **Storage:** Save your preferences locally

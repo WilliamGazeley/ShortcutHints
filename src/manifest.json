@@ -1,5 +1,11 @@
 {
   "manifest_version": 3,
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "william@irai.co",
+      "strict_min_version": "58.0"
+    }
+  },
   "name": "Shortcut Hints",
   "version": "0.1.2",
   "description": "Displays keyboard shortcuts for popular websites.",

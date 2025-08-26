@@ -2,6 +2,11 @@
 
 Love keyboard shortcuts but hate memorizing them? Shortcut Hints puts keyboard shortcut hints right on your favorite sites so you can ditch the mouse and zip around with ease. Works on Chrome and Firefox!
 
+🔒 Privacy-Focused:
+- All preferences stored locally
+- No data collection or sharing
+- Open source and transparent
+
 ## Current support
 
 - WhatsApp Web (`web.whatsapp.com`)
