@@ -20,6 +20,7 @@ More sites are welcome via contributions (see Contributing).
 ## Install
 
 Chrome: [https://chromewebstore.google.com/detail/shortcut-hints/hkkenkphgbjfgljbccieleblihklcmcn?hl=en](https://chromewebstore.google.com/detail/hkkenkphgbjfgljbccieleblihklcmcn?utm_source=item-share-cb)
+
 Firefox: [https://addons.mozilla.org/en-US/firefox/addon/shortcut-hints/](https://addons.mozilla.org/en-US/firefox/addon/shortcut-hints/)
 
 
